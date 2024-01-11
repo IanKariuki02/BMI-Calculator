@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator Result</title>
+</head>
+<body>
+    <h1>BMI Calculator Results for {{ name }}</h1>
+    <p><b>Name:</b> {{ name }}</p>
+    <p><b>Gender:</b> {{ gender }}</p>
+    <p><b>Age:</b> {{ age }}</p>
+    <p><b>Address:</b> {{ address }}</p>
+    <p><b>Hobbies:</b> {{ hobbies }}</p>
+    <p><b>Weight:</b> {{ weight }} kg</p>
+    <p><b>Height:</b> {{ height }} cm</p>
+    <p><b>BMI:</b> {{ bmi }}</p>
+    {% if bmi < 18.5 %}
+        <p><b>BMI Category:</b> Underweight</p>
+    {% elif bmi >= 18.5 and bmi < 25 %}
+        <p><b>BMI Category:</b> Normal weight</p>
+    {% elif bmi >= 25 and bmi < 30 %}
+        <p><b>BMI Category:</b> Overweight</p>
+    {% else %}
+        <p><b>BMI Category:</b> Obese</p>
+    {% endif %}
+    <a href="{% url 'bmi_calculator' %}">Calculate another BMI</a>
+</body>
+</html>
