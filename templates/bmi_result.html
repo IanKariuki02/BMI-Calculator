@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator Result</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url("/Media/BMI image.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container{
+            align-items: normal;
+            display: flow;
+            padding: 2rem;
+        }
+     button:hover {
+      background-color: #28a745;
+         padding: 10px 15px;
+        color: #fff;
+        transition: 0.4s;
+}
+     h1 {
+  font-size: 2.5rem; /* Larger heading */
+  font-weight: bold;
+    color: #007bff;
+}
+     p{
+         font-size: large;
+         color: white;
+     }
+.btn-outline-submit {
+  background-color: transparent;
+  border-color: #28a745;
+  color: #28a745;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn-outline-submit:hover {
+  background-color: #28a745;
+  color: #fff;
+    transition:0.4s;
+}
+
+    </style>
 </head>
 <body>
     <h1>BMI Calculator Results for {{ name }}</h1>
+    <div class="container">
     <p><b>Name:</b> {{ name }}</p>
     <p><b>Gender:</b> {{ gender }}</p>
     <p><b>Age:</b> {{ age }}</p>
@@ -24,6 +69,7 @@
     {% else %}
         <p><b>BMI Category:</b> Obese</p>
     {% endif %}
-    <a href="{% url 'bmi_calculator' %}">Calculate another BMI</a>
+<a href="{% url 'bmi_calculator' %}" class="btn btn-outline-submit">Calculate another BMI</a>
+    </div>
 </body>
 </html>
